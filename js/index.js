@@ -3,6 +3,7 @@ alert("While method: " + fibWhile(num));
 alert("Cycle method: " + fibCyc(num));
 alert("Recurtion method: " + fibRec(num));
 alert("Arrey method: " + fibArr(num));
+alert("Loop method: " + fibLoop(num));
 
 
 
@@ -46,6 +47,16 @@ function fibArr(n){
      fibArr.push(fibArr[i-1] + fibArr[i-2] );
   }
   return fibArr.pop (n);
+}
+
+function fibLoop(n){
+    let fibOne = 1, fibTwo = 1;
+    for(let i = 3; i <= n; i++){
+        let next = fibOne + fibTwo;
+        fibOne = fibTwo;
+        fibTwo = next;
+    }
+    return fibTwo;
 }
 
 function fib(n) {
